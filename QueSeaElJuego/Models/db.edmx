@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QueSeaElJuegoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Personaje">
+          <Key>
+            <PropertyRef Name="PerId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="PerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="PerVida" Type="smallint" />
+          <Property Name="PerDanio" Type="smallint" />
+          <Property Name="PerExpAcu" Type="int" />
+          <Property Name="PerSuerte" Type="smallint" />
+          <Property Name="PerNom" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nchar" MaxLength="40" Nullable="false" />
+          <Property Name="UserPass" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="UserNivel" Type="tinyint" Nullable="false" />
+          <Property Name="UserExp" Type="int" Nullable="false" />
+          <Property Name="UserPartComp" Type="int" />
+          <Property Name="UserPartPerd" Type="int" />
+          <Property Name="UserPartTotal" Type="int" />
+        </EntityType>
+        <Association Name="FK_Personaje_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="Personaje" Type="Self.Personaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Personaje">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QueSeaElJuegoModelStoreContainer">
+          <EntitySet Name="Personaje" EntityType="Self.Personaje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Personaje_USER" Association="Self.FK_Personaje_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="Personaje" EntitySet="Personaje" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QueSeaElJuegoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Personaje">
+          <Key>
+            <PropertyRef Name="PerId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="PerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PerVida" Type="Int16" />
+          <Property Name="PerDanio" Type="Int16" />
+          <Property Name="PerExpAcu" Type="Int32" />
+          <Property Name="PerSuerte" Type="Int16" />
+          <NavigationProperty Name="USER" Relationship="Self.FK_Personaje_USER" FromRole="Personaje" ToRole="USER" />
+          <Property Name="PerNom" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UserPass" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UserNivel" Type="Byte" Nullable="false" />
+          <Property Name="UserExp" Type="Int32" Nullable="false" />
+          <Property Name="UserPartComp" Type="Int32" />
+          <Property Name="UserPartPerd" Type="Int32" />
+          <Property Name="UserPartTotal" Type="Int32" />
+          <NavigationProperty Name="Personaje" Relationship="Self.FK_Personaje_USER" FromRole="USER" ToRole="Personaje" />
+        </EntityType>
+        <Association Name="FK_Personaje_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="Personaje" Type="Self.Personaje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="Personaje">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QSEJEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Personaje" EntityType="Self.Personaje" />
+          <EntitySet Name="USER" EntityType="Self.USER" />
+          <AssociationSet Name="FK_Personaje_USER" Association="Self.FK_Personaje_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="Personaje" EntitySet="Personaje" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QueSeaElJuegoModelStoreContainer" CdmEntityContainer="QSEJEntities">
+          <EntitySetMapping Name="Personaje">
+            <EntityTypeMapping TypeName="QueSeaElJuegoModel.Personaje">
+              <MappingFragment StoreEntitySet="Personaje">
+                <ScalarProperty Name="PerNom" ColumnName="PerNom" />
+                <ScalarProperty Name="PerId" ColumnName="PerId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PerVida" ColumnName="PerVida" />
+                <ScalarProperty Name="PerDanio" ColumnName="PerDanio" />
+                <ScalarProperty Name="PerExpAcu" ColumnName="PerExpAcu" />
+                <ScalarProperty Name="PerSuerte" ColumnName="PerSuerte" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER">
+            <EntityTypeMapping TypeName="QueSeaElJuegoModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+                <ScalarProperty Name="UserNivel" ColumnName="UserNivel" />
+                <ScalarProperty Name="UserExp" ColumnName="UserExp" />
+                <ScalarProperty Name="UserPartComp" ColumnName="UserPartComp" />
+                <ScalarProperty Name="UserPartPerd" ColumnName="UserPartPerd" />
+                <ScalarProperty Name="UserPartTotal" ColumnName="UserPartTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

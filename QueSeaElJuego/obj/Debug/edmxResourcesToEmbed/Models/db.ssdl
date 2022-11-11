@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QueSeaElJuegoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Personaje">
+    <Key>
+      <PropertyRef Name="PerId" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="PerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="PerVida" Type="smallint" />
+    <Property Name="PerDanio" Type="smallint" />
+    <Property Name="PerExpAcu" Type="int" />
+    <Property Name="PerSuerte" Type="smallint" />
+    <Property Name="PerNom" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="UserPass" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="UserNivel" Type="tinyint" Nullable="false" />
+    <Property Name="UserExp" Type="int" Nullable="false" />
+    <Property Name="UserPartComp" Type="int" />
+    <Property Name="UserPartPerd" Type="int" />
+    <Property Name="UserPartTotal" Type="int" />
+  </EntityType>
+  <Association Name="FK_Personaje_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="1" />
+    <End Role="Personaje" Type="Self.Personaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="Personaje">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QueSeaElJuegoModelStoreContainer">
+    <EntitySet Name="Personaje" EntityType="Self.Personaje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Personaje_USER" Association="Self.FK_Personaje_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="Personaje" EntitySet="Personaje" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QueSeaElJuegoModelStoreContainer" CdmEntityContainer="QSEJEntities">
+    <EntitySetMapping Name="Personaje">
+      <EntityTypeMapping TypeName="QueSeaElJuegoModel.Personaje">
+        <MappingFragment StoreEntitySet="Personaje">
+          <ScalarProperty Name="PerNom" ColumnName="PerNom" />
+          <ScalarProperty Name="PerId" ColumnName="PerId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PerVida" ColumnName="PerVida" />
+          <ScalarProperty Name="PerDanio" ColumnName="PerDanio" />
+          <ScalarProperty Name="PerExpAcu" ColumnName="PerExpAcu" />
+          <ScalarProperty Name="PerSuerte" ColumnName="PerSuerte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="QueSeaElJuegoModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+          <ScalarProperty Name="UserNivel" ColumnName="UserNivel" />
+          <ScalarProperty Name="UserExp" ColumnName="UserExp" />
+          <ScalarProperty Name="UserPartComp" ColumnName="UserPartComp" />
+          <ScalarProperty Name="UserPartPerd" ColumnName="UserPartPerd" />
+          <ScalarProperty Name="UserPartTotal" ColumnName="UserPartTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QueSeaElJuegoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Personaje">
+    <Key>
+      <PropertyRef Name="PerId" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="PerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PerVida" Type="Int16" />
+    <Property Name="PerDanio" Type="Int16" />
+    <Property Name="PerExpAcu" Type="Int32" />
+    <Property Name="PerSuerte" Type="Int16" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_Personaje_USER" FromRole="Personaje" ToRole="USER" />
+    <Property Name="PerNom" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UserPass" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UserNivel" Type="Byte" Nullable="false" />
+    <Property Name="UserExp" Type="Int32" Nullable="false" />
+    <Property Name="UserPartComp" Type="Int32" />
+    <Property Name="UserPartPerd" Type="Int32" />
+    <Property Name="UserPartTotal" Type="Int32" />
+    <NavigationProperty Name="Personaje" Relationship="Self.FK_Personaje_USER" FromRole="USER" ToRole="Personaje" />
+  </EntityType>
+  <Association Name="FK_Personaje_USER">
+    <End Role="USER" Type="Self.USER" Multiplicity="1" />
+    <End Role="Personaje" Type="Self.Personaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="Personaje">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QSEJEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Personaje" EntityType="Self.Personaje" />
+    <EntitySet Name="USER" EntityType="Self.USER" />
+    <AssociationSet Name="FK_Personaje_USER" Association="Self.FK_Personaje_USER">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="Personaje" EntitySet="Personaje" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
