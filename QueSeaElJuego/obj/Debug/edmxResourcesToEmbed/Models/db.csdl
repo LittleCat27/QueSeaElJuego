@@ -11,8 +11,8 @@
     <Property Name="PerDanio" Type="Int16" />
     <Property Name="PerExpAcu" Type="Int32" />
     <Property Name="PerSuerte" Type="Int16" />
-    <NavigationProperty Name="USER" Relationship="Self.FK_Personaje_USER" FromRole="Personaje" ToRole="USER" />
     <Property Name="PerNom" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="USER" Relationship="Self.FK_Personaje_USER" FromRole="Personaje" ToRole="USER" />
   </EntityType>
   <EntityType Name="USER">
     <Key>
@@ -39,7 +39,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QSEJEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QueSeaElJuegoEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Personaje" EntityType="Self.Personaje" />
     <EntitySet Name="USER" EntityType="Self.USER" />
     <AssociationSet Name="FK_Personaje_USER" Association="Self.FK_Personaje_USER">

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QueSeaElJuegoModelStoreContainer" CdmEntityContainer="QSEJEntities">
+  <EntityContainerMapping StorageEntityContainer="QueSeaElJuegoModelStoreContainer" CdmEntityContainer="QueSeaElJuegoEntities">
     <EntitySetMapping Name="Personaje">
       <EntityTypeMapping TypeName="QueSeaElJuegoModel.Personaje">
         <MappingFragment StoreEntitySet="Personaje">
-          <ScalarProperty Name="PerNom" ColumnName="PerNom" />
           <ScalarProperty Name="PerId" ColumnName="PerId" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="PerVida" ColumnName="PerVida" />
           <ScalarProperty Name="PerDanio" ColumnName="PerDanio" />
           <ScalarProperty Name="PerExpAcu" ColumnName="PerExpAcu" />
           <ScalarProperty Name="PerSuerte" ColumnName="PerSuerte" />
+          <ScalarProperty Name="PerNom" ColumnName="PerNom" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

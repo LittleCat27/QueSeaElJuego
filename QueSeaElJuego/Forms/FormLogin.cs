@@ -43,16 +43,28 @@ namespace QueSeaElJuego.Forms
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            QSEJEntities dbContext = new QSEJEntities();
+            intentarLogin();
+        }
+
+        private void intentarLogin()
+        {
+            QueSeaElJuegoEntities dbContext = new QueSeaElJuegoEntities();
             var query = from p in dbContext.USER
                         where p.UserName.ToLower() == this.UserName.ToLower()
                         select p.UserPass;
-            if (query.Single().Trim() == txtClave.Text.Trim())
+            if (query.Count() > 0)
             {
-                FPrincipal.CargarUsuario(this.UserName.ToLower());
-                FPrincipal.Show();
-                this.Close();
-                this.Dispose();
+                if (query.Single().Trim() == txtClave.Text.Trim())
+                {
+                    FPrincipal.CargarUsuario(this.UserName.ToLower());
+                    FPrincipal.Show();
+                    this.Close();
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña Incorrectos");
+                }
             }
             else
             {
@@ -95,6 +107,14 @@ namespace QueSeaElJuego.Forms
         private void txtClave_TextChanged(object sender, EventArgs e)
         {
             this.Password = txtClave.Text;
+        }
+
+        private void txtClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyValue == 13)
+            {
+                intentarLogin();
+            }
         }
     }
 }

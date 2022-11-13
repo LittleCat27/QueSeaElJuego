@@ -44,10 +44,11 @@ namespace QueSeaElJuego.Forms
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUsuario.Location = new System.Drawing.Point(376, 132);
+            this.txtUsuario.Location = new System.Drawing.Point(282, 107);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.MaxLength = 40;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(268, 41);
+            this.txtUsuario.Size = new System.Drawing.Size(202, 35);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
@@ -56,10 +57,9 @@ namespace QueSeaElJuego.Forms
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblUsuario.Location = new System.Drawing.Point(120, 143);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(90, 116);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(146, 31);
+            this.lblUsuario.Size = new System.Drawing.Size(113, 25);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "USUARIO";
             // 
@@ -68,10 +68,9 @@ namespace QueSeaElJuego.Forms
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblClave.Location = new System.Drawing.Point(120, 202);
-            this.lblClave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblClave.Location = new System.Drawing.Point(90, 164);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(214, 31);
+            this.lblClave.Size = new System.Drawing.Size(167, 25);
             this.lblClave.TabIndex = 3;
             this.lblClave.Text = "CONTRASEÑA";
             // 
@@ -80,10 +79,9 @@ namespace QueSeaElJuego.Forms
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lblTitulo.Location = new System.Drawing.Point(155, 32);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(116, 26);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(422, 52);
+            this.lblTitulo.Size = new System.Drawing.Size(333, 39);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "INICIO DE SESION";
             // 
@@ -93,12 +91,12 @@ namespace QueSeaElJuego.Forms
             this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSalir.Location = new System.Drawing.Point(713, 0);
+            this.btnSalir.Location = new System.Drawing.Point(535, 0);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(40, 37);
+            this.btnSalir.Size = new System.Drawing.Size(30, 30);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -110,10 +108,9 @@ namespace QueSeaElJuego.Forms
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnIngresar.Location = new System.Drawing.Point(376, 260);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIngresar.Location = new System.Drawing.Point(282, 211);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(269, 36);
+            this.btnIngresar.Size = new System.Drawing.Size(202, 29);
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -124,9 +121,10 @@ namespace QueSeaElJuego.Forms
             this.lblRegistrase.AutoSize = true;
             this.lblRegistrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lblRegistrase.Location = new System.Drawing.Point(453, 313);
+            this.lblRegistrase.Location = new System.Drawing.Point(340, 254);
+            this.lblRegistrase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistrase.Name = "lblRegistrase";
-            this.lblRegistrase.Size = new System.Drawing.Size(110, 25);
+            this.lblRegistrase.Size = new System.Drawing.Size(91, 20);
             this.lblRegistrase.TabIndex = 3;
             this.lblRegistrase.Text = "Registrarse";
             this.lblRegistrase.Click += new System.EventHandler(this.lblRegistrase_Click);
@@ -136,20 +134,22 @@ namespace QueSeaElJuego.Forms
             this.txtClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtClave.Location = new System.Drawing.Point(376, 192);
+            this.txtClave.Location = new System.Drawing.Point(282, 156);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(2);
             this.txtClave.MaxLength = 30;
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(268, 41);
+            this.txtClave.Size = new System.Drawing.Size(202, 35);
             this.txtClave.TabIndex = 1;
             this.txtClave.UseSystemPasswordChar = true;
             this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
+            this.txtClave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtClave_KeyDown);
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
-            this.ClientSize = new System.Drawing.Size(755, 363);
+            this.ClientSize = new System.Drawing.Size(566, 295);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.lblRegistrase);
             this.Controls.Add(this.btnIngresar);
@@ -159,8 +159,8 @@ namespace QueSeaElJuego.Forms
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.Load += new System.EventHandler(this.FormLogin_Load);

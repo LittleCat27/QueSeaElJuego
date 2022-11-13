@@ -34,12 +34,10 @@ namespace QueSeaElJuego.Forms
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Imagen = new System.Windows.Forms.PictureBox();
             this.btn_Encender = new System.Windows.Forms.Button();
-            this.btn_Apagar = new System.Windows.Forms.Button();
             this.btn_JugarConFoto = new System.Windows.Forms.Button();
             this.BuscarFoto = new System.Windows.Forms.OpenFileDialog();
             this.ConfirmarSeleccion = new System.Windows.Forms.Button();
-            this.TimerCamara = new System.Windows.Forms.Timer(this.components);
-            this.labelAvatars = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,37 +48,28 @@ namespace QueSeaElJuego.Forms
             // Imagen
             // 
             this.Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Imagen.Location = new System.Drawing.Point(74, 70);
+            this.Imagen.Location = new System.Drawing.Point(354, 100);
             this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(230, 170);
+            this.Imagen.Size = new System.Drawing.Size(180, 180);
+            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Imagen.TabIndex = 0;
             this.Imagen.TabStop = false;
             // 
             // btn_Encender
             // 
-            this.btn_Encender.Location = new System.Drawing.Point(348, 419);
+            this.btn_Encender.Location = new System.Drawing.Point(375, 363);
             this.btn_Encender.Name = "btn_Encender";
-            this.btn_Encender.Size = new System.Drawing.Size(173, 80);
+            this.btn_Encender.Size = new System.Drawing.Size(148, 69);
             this.btn_Encender.TabIndex = 1;
             this.btn_Encender.Text = "Sacar Foto";
             this.btn_Encender.UseVisualStyleBackColor = true;
             this.btn_Encender.Click += new System.EventHandler(this.btnEncender_Click);
             // 
-            // btn_Apagar
-            // 
-            this.btn_Apagar.Location = new System.Drawing.Point(555, 420);
-            this.btn_Apagar.Name = "btn_Apagar";
-            this.btn_Apagar.Size = new System.Drawing.Size(173, 80);
-            this.btn_Apagar.TabIndex = 2;
-            this.btn_Apagar.Text = "Jugar con Camara";
-            this.btn_Apagar.UseVisualStyleBackColor = true;
-            this.btn_Apagar.Click += new System.EventHandler(this.btnApagar_Click);
-            // 
             // btn_JugarConFoto
             // 
-            this.btn_JugarConFoto.Location = new System.Drawing.Point(74, 422);
+            this.btn_JugarConFoto.Location = new System.Drawing.Point(66, 365);
             this.btn_JugarConFoto.Name = "btn_JugarConFoto";
-            this.btn_JugarConFoto.Size = new System.Drawing.Size(215, 77);
+            this.btn_JugarConFoto.Size = new System.Drawing.Size(184, 67);
             this.btn_JugarConFoto.TabIndex = 3;
             this.btn_JugarConFoto.Text = "Elegir foto del PC";
             this.btn_JugarConFoto.UseVisualStyleBackColor = true;
@@ -95,46 +84,52 @@ namespace QueSeaElJuego.Forms
             // 
             // ConfirmarSeleccion
             // 
-            this.ConfirmarSeleccion.Location = new System.Drawing.Point(781, 423);
+            this.ConfirmarSeleccion.Location = new System.Drawing.Point(620, 363);
             this.ConfirmarSeleccion.Name = "ConfirmarSeleccion";
-            this.ConfirmarSeleccion.Size = new System.Drawing.Size(215, 77);
+            this.ConfirmarSeleccion.Size = new System.Drawing.Size(184, 69);
             this.ConfirmarSeleccion.TabIndex = 4;
             this.ConfirmarSeleccion.Text = "Confirmar Seleccion";
             this.ConfirmarSeleccion.UseVisualStyleBackColor = true;
             this.ConfirmarSeleccion.Click += new System.EventHandler(this.ConfirmarSeleccion_Click);
             // 
-            // TimerCamara
+            // btnSalir
             // 
-            this.TimerCamara.Tick += new System.EventHandler(this.TimerCamara_Tick);
-            // 
-            // labelAvatars
-            // 
-            this.labelAvatars.AutoSize = true;
-            this.labelAvatars.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAvatars.Location = new System.Drawing.Point(526, 26);
-            this.labelAvatars.Name = "labelAvatars";
-            this.labelAvatars.Size = new System.Drawing.Size(254, 32);
-            this.labelAvatars.TabIndex = 5;
-            this.labelAvatars.Text = "Avatars Seleccionables";
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSalir.Location = new System.Drawing.Point(875, -1);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(30, 30);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "X";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // PantallaPhoto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 562);
-            this.Controls.Add(this.labelAvatars);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
+            this.ClientSize = new System.Drawing.Size(905, 487);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.ConfirmarSeleccion);
             this.Controls.Add(this.btn_JugarConFoto);
-            this.Controls.Add(this.btn_Apagar);
             this.Controls.Add(this.btn_Encender);
             this.Controls.Add(this.Imagen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PantallaPhoto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PantallaPhoto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PantallaPhoto_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -143,11 +138,9 @@ namespace QueSeaElJuego.Forms
         private System.Windows.Forms.Timer timer1;
         private PictureBox Imagen;
         private Button btn_Encender;
-        private Button btn_Apagar;
         private Button btn_JugarConFoto;
         private OpenFileDialog BuscarFoto;
         private Button ConfirmarSeleccion;
-        private System.Windows.Forms.Timer TimerCamara;
-        private Label labelAvatars;
+        private Button btnSalir;
     }
 }

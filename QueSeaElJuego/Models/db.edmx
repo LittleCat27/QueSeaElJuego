@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QueSeaElJuegoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QueSeaElJuegoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Personaje">
           <Key>
             <PropertyRef Name="PerId" />
@@ -50,7 +50,8 @@
             <End Role="Personaje" EntitySet="Personaje" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QueSeaElJuegoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -65,8 +66,8 @@
           <Property Name="PerDanio" Type="Int16" />
           <Property Name="PerExpAcu" Type="Int32" />
           <Property Name="PerSuerte" Type="Int16" />
-          <NavigationProperty Name="USER" Relationship="Self.FK_Personaje_USER" FromRole="Personaje" ToRole="USER" />
           <Property Name="PerNom" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="USER" Relationship="Self.FK_Personaje_USER" FromRole="Personaje" ToRole="USER" />
         </EntityType>
         <EntityType Name="USER">
           <Key>
@@ -93,7 +94,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QSEJEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QueSeaElJuegoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Personaje" EntityType="Self.Personaje" />
           <EntitySet Name="USER" EntityType="Self.USER" />
           <AssociationSet Name="FK_Personaje_USER" Association="Self.FK_Personaje_USER">
@@ -106,17 +107,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QueSeaElJuegoModelStoreContainer" CdmEntityContainer="QSEJEntities">
+        <EntityContainerMapping StorageEntityContainer="QueSeaElJuegoModelStoreContainer" CdmEntityContainer="QueSeaElJuegoEntities">
           <EntitySetMapping Name="Personaje">
             <EntityTypeMapping TypeName="QueSeaElJuegoModel.Personaje">
               <MappingFragment StoreEntitySet="Personaje">
-                <ScalarProperty Name="PerNom" ColumnName="PerNom" />
                 <ScalarProperty Name="PerId" ColumnName="PerId" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="PerVida" ColumnName="PerVida" />
                 <ScalarProperty Name="PerDanio" ColumnName="PerDanio" />
                 <ScalarProperty Name="PerExpAcu" ColumnName="PerExpAcu" />
                 <ScalarProperty Name="PerSuerte" ColumnName="PerSuerte" />
+                <ScalarProperty Name="PerNom" ColumnName="PerNom" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

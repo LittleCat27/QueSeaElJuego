@@ -64,7 +64,7 @@ namespace QueSeaElJuego.Forms
 
             if(!this.IsRegistered && this.isPasswordValid)
             {
-                QSEJEntities dbContext = new QSEJEntities();
+                QueSeaElJuegoEntities dbContext = new QueSeaElJuegoEntities();
                 USER nuevoUsuario = new USER();
                 nuevoUsuario.UserPartTotal = 0;
                 nuevoUsuario.UserPartPerd = 0;
@@ -82,13 +82,13 @@ namespace QueSeaElJuego.Forms
 
         }
 
-        private async void txtUsuario_Leave(object sender, EventArgs e)
+        private void txtUsuario_Leave(object sender, EventArgs e)
         {
             this.UserName = txtUsuario.Text;
 
 
             //Validacion que el usuario no exista
-            QSEJEntities dbContext = new QSEJEntities();
+            QueSeaElJuegoEntities dbContext = new QueSeaElJuegoEntities();
             var query = from p in dbContext.USER
                         where p.UserName.ToLower() == UserName.ToLower()
                         select p.UserName;

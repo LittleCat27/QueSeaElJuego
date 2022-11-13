@@ -14,12 +14,10 @@ namespace QueSeaElJuego
 {
     public partial class FormPrincipal : Form
     {
-        FormJuego FJuego;
         private string Username;
         public FormPrincipal()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,6 +27,8 @@ namespace QueSeaElJuego
             formLogin.Show();
             
             this.BackgroundImage = Image.FromFile(Directory.GetParent("..")+@"\Recursos\Fondos\FondoFantasia.png");
+            this.tblIzqInterior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tblIzqInterior.BackgroundImage = Image.FromFile(Directory.GetParent("..") + @"\Recursos\Fondos\maderaFondo.png");
         }
 
         public void CargarUsuario(string Username)
@@ -63,7 +63,13 @@ namespace QueSeaElJuego
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void btnCrearPersonaje_Click(object sender, EventArgs e)
+        {
+            new PantallaPhoto(this).Show();
+            this.Hide();
         }
     }
 }

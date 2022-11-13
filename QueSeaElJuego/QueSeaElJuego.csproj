@@ -184,8 +184,8 @@
   <ItemGroup>
     <Content Include="Models\db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>db.Context.cs</LastGenOutput>
       <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -193,6 +193,7 @@
       <LastGenOutput>db.cs</LastGenOutput>
     </Content>
     <Content Include="Recursos\Fondos\FondoFantasia.png" />
+    <Content Include="Recursos\Fondos\maderaFondo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

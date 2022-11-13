@@ -38,7 +38,7 @@ namespace QueSeaElJuego.Forms
             string path = Directory.GetParent(Directory.GetParent(@"..").ToString()).ToString();
             for (int i = 0; i < 5; i++)
             {
-                
+                /*
                 for (int j = 0; j < 3; j++)
                 {
                     PictureBox avatar = new PictureBox();
@@ -54,25 +54,12 @@ namespace QueSeaElJuego.Forms
                 }
                 x += 106;
                 y = 70;
+                */
             }
             
 
         }
 
-        private void clickAvatar(object sender, EventArgs e)
-        {
-            object pictureBox = new PictureBox();
-            if (sender.GetType() == pictureBox.GetType())
-            {
-                PictureBox avatarClickeado = sender as PictureBox;
-                string path = Directory.GetParent(Directory.GetParent(@"..").ToString()).ToString() + @"\Recursos\Avatars\";
-                Imagen.Image = Image.FromFile(path + avatarClickeado.Name + ".png");
-            }
-
-
-
-            
-        }
         private void btnEncender_Click(object sender, EventArgs e)
         {
             if(camara != null) camara.Dispose();
@@ -95,13 +82,22 @@ namespace QueSeaElJuego.Forms
         {
             this.contador++;   
             camara.Read(frame);
-
-            Imagen.Image = resizeImage(frame.ToBitmap(), Imagen.Size);
-            if (contador == 20)
+            if (camara.IsOpened)
+            {
+                Imagen.Image = frame.ToBitmap();
+                if (contador == 20)
+                {
+                    camara.Stop();
+                    timer1.Stop();
+                    camara.Dispose();
+                }
+            }
+            else
             {
                 camara.Stop();
                 timer1.Stop();
                 camara.Dispose();
+                MessageBox.Show("Usted no tiene camara :v");
             }
 
         }
@@ -119,18 +115,23 @@ namespace QueSeaElJuego.Forms
         private void BuscarFoto_FileOk(object sender, CancelEventArgs e)
         {
             Image ImagenRecibida = Image.FromFile(BuscarFoto.FileName);
+            int maxSizeY = 180;
+            int maxSizeX = 180;
 
-            if (ImagenRecibida.Size.Width > 2300 || ImagenRecibida.Size.Height > 1700)
+
+            if (ImagenRecibida.Size.Width > maxSizeX || ImagenRecibida.Size.Height > maxSizeY)
             {
-                MessageBox.Show("La imagen tiene que tener el tamaño de 2300x1700 o menor");
+                MessageBox.Show($"La imagen tiene que tener el tamaño de {maxSizeX}x{maxSizeY} o menor");
             }
             else
             {
-                Image imagenProcesada = resizeImage(ImagenRecibida, new Size(230,170));
+                Image imagenProcesada = resizeImage(ImagenRecibida, Imagen.Size);
 
                 Imagen.Image = imagenProcesada;
             }
         }
+
+        #region Metodo para ajustar tamaño de la imagen
         static Image resizeImage(Image imgToResize, Size size)
         {
             //Get the image current width  
@@ -160,23 +161,41 @@ namespace QueSeaElJuego.Forms
             g.Dispose();
             return (System.Drawing.Image)b;
         }
-        private void TimerCamara_Tick(object sender, EventArgs e)
+
+
+        #endregion
+
+        #region Hacer el Formulario Arrastrable
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void FormLogin_MouseDown(object sender, MouseEventArgs e)
         {
-            camara.Read(frame);
-            Imagen.Image = frame.ToBitmap();
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
+        #endregion
 
         private void ConfirmarSeleccion_Click(object sender, EventArgs e)
         {
             FormJuego fJuego = new FormJuego(this.FPrincipal);
             fJuego.Show();
 
+            this.Dispose();
+        }
 
-            /*Cuando este bien decidido, esto prodia hacerse de varias formas*/
-            //Home home = new Home(Imagen.Image);
-            //home.CargarImagenUsuario(Imagen.Image);  << Prefiero esto personalmente, asi no interfiere, y es facil de sacar de ser necesario
-            //home.IniciarVideo(); << Este podria ser si selecciona estar con camara o en vivo
-
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.FPrincipal.Show();
             this.Dispose();
         }
     }

@@ -13,10 +13,10 @@ namespace QueSeaElJuego.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QSEJEntities : DbContext
+    public partial class QueSeaElJuegoEntities : DbContext
     {
-        public QSEJEntities()
-            : base("name=QSEJEntities")
+        public QueSeaElJuegoEntities()
+            : base("name=QueSeaElJuegoEntities")
         {
         }
     
