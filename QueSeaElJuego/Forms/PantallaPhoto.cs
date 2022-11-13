@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.Util;
 using QueSeaElJuego.Forms;
+using System.Drawing.Imaging;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QueSeaElJuego.Forms
 {
@@ -36,30 +38,12 @@ namespace QueSeaElJuego.Forms
             //106 a la derecha y hacia abajo -- 421; 70 posicion inicial
             int x = 421, y = 70, c = 1;
             string path = Directory.GetParent(Directory.GetParent(@"..").ToString()).ToString();
-            for (int i = 0; i < 5; i++)
-            {
-                /*
-                for (int j = 0; j < 3; j++)
-                {
-                    PictureBox avatar = new PictureBox();
-                    avatar.Location = new System.Drawing.Point(x, y);
-                    avatar.Name = "avatar" + c;
-                    avatar.Size = new System.Drawing.Size(100, 70);
-                    avatar.Image = resizeImage(Image.FromFile(path + @"\Recursos\Avatars\" + avatar.Name + ".png"), new Size(100, 70));
-                    avatar.Click += new EventHandler(this.clickAvatar);
-                    avatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    this.Controls.Add(avatar);
-                    c++;
-                    y += 106;
-                }
-                x += 106;
-                y = 70;
-                */
-            }
-            
 
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+
+        #region Seleccion de foto o sacar una foto
         private void btnEncender_Click(object sender, EventArgs e)
         {
             if(camara != null) camara.Dispose();
@@ -71,11 +55,6 @@ namespace QueSeaElJuego.Forms
                 timer1.Enabled = true;
             }
             timer1.Start();
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            //pictureBox1.Image = null;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -115,8 +94,8 @@ namespace QueSeaElJuego.Forms
         private void BuscarFoto_FileOk(object sender, CancelEventArgs e)
         {
             Image ImagenRecibida = Image.FromFile(BuscarFoto.FileName);
-            int maxSizeY = 180;
-            int maxSizeX = 180;
+            int maxSizeY = 2000;
+            int maxSizeX = 2000;
 
 
             if (ImagenRecibida.Size.Width > maxSizeX || ImagenRecibida.Size.Height > maxSizeY)
@@ -125,11 +104,15 @@ namespace QueSeaElJuego.Forms
             }
             else
             {
-                Image imagenProcesada = resizeImage(ImagenRecibida, Imagen.Size);
+                Image imagenProcesada = ImagenRecibida;
 
                 Imagen.Image = imagenProcesada;
             }
         }
+
+        #endregion
+
+        //////////////////////////////////////////////////////////////////////////////////
 
         #region Metodo para ajustar tamaño de la imagen
         static Image resizeImage(Image imgToResize, Size size)
@@ -165,6 +148,8 @@ namespace QueSeaElJuego.Forms
 
         #endregion
 
+        //////////////////////////////////////////////////////////////////////////////////
+
         #region Hacer el Formulario Arrastrable
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -184,6 +169,8 @@ namespace QueSeaElJuego.Forms
             }
         }
         #endregion
+
+        //////////////////////////////////////////////////////////////////////////////////
 
         private void ConfirmarSeleccion_Click(object sender, EventArgs e)
         {
