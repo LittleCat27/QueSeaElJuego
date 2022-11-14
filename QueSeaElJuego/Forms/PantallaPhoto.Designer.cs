@@ -57,6 +57,12 @@ namespace QueSeaElJuego.Forms
             // 
             // btn_Encender
             // 
+            this.btn_Encender.FlatAppearance.BorderSize = 3;
+            this.btn_Encender.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_Encender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Encender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Encender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Encender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Encender.Location = new System.Drawing.Point(375, 363);
             this.btn_Encender.Name = "btn_Encender";
             this.btn_Encender.Size = new System.Drawing.Size(148, 69);
@@ -67,6 +73,12 @@ namespace QueSeaElJuego.Forms
             // 
             // btn_JugarConFoto
             // 
+            this.btn_JugarConFoto.FlatAppearance.BorderSize = 3;
+            this.btn_JugarConFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_JugarConFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_JugarConFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_JugarConFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_JugarConFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_JugarConFoto.Location = new System.Drawing.Point(66, 365);
             this.btn_JugarConFoto.Name = "btn_JugarConFoto";
             this.btn_JugarConFoto.Size = new System.Drawing.Size(184, 67);
@@ -77,13 +89,18 @@ namespace QueSeaElJuego.Forms
             // 
             // BuscarFoto
             // 
-            this.BuscarFoto.Filter = "Imagen jpg (*.jpg)|*.jpg|Imagen png (*.png)|*.png|Imagen jpeg (*.jpeg)|*.jpeg|Ima" +
-    "gen tiff (*.tiff)|*.tiff|Imagen de mapa de bits (*.bmp)|*.bmp|Todos los archivos" +
-    " (*.*)|*.*";
+            this.BuscarFoto.Filter = "Todos los archivos (*.*)|*.*|Imagen jpg (*.jpg)|*.jpg|Imagen png (*.png)|*.png|Imagen jpeg (*.jpeg)|*.jpeg|Ima" +
+    "gen tiff (*.tiff)|*.tiff|Imagen de mapa de bits (*.bmp)|*.bmp";
             this.BuscarFoto.FileOk += new System.ComponentModel.CancelEventHandler(this.BuscarFoto_FileOk);
             // 
             // ConfirmarSeleccion
             // 
+            this.ConfirmarSeleccion.FlatAppearance.BorderSize = 3;
+            this.ConfirmarSeleccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.ConfirmarSeleccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ConfirmarSeleccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmarSeleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmarSeleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ConfirmarSeleccion.Location = new System.Drawing.Point(620, 363);
             this.ConfirmarSeleccion.Name = "ConfirmarSeleccion";
             this.ConfirmarSeleccion.Size = new System.Drawing.Size(184, 69);

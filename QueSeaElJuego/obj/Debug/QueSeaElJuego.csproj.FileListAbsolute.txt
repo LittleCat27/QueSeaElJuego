@@ -82,3 +82,4 @@ C:\Users\Joaquin Gregoire\Source\Repos\QueSeaElJuego\QueSeaElJuego\obj\Debug\Que
 C:\Users\Joaquin Gregoire\Source\Repos\QueSeaElJuego\QueSeaElJuego\obj\Debug\QueSeaElJuego.csproj.CopyComplete
 C:\Users\Joaquin Gregoire\Source\Repos\QueSeaElJuego\QueSeaElJuego\obj\Debug\QueSeaElJuego.exe
 C:\Users\Joaquin Gregoire\Source\Repos\QueSeaElJuego\QueSeaElJuego\obj\Debug\QueSeaElJuego.pdb
+C:\Users\Joaquin Gregoire\source\repos\QueSeaElJuego\QueSeaElJuego\obj\Debug\QueSeaElJuego.UserControls.Bala.resources

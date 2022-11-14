@@ -175,8 +175,9 @@ namespace QueSeaElJuego.Forms
         private void ConfirmarSeleccion_Click(object sender, EventArgs e)
         {
             FormJuego fJuego = new FormJuego(this.FPrincipal);
+            
             fJuego.Show();
-
+            fJuego.cargarCara(this.Imagen.Image);
             this.Dispose();
         }
 
