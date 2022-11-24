@@ -69,8 +69,8 @@ namespace QueSeaElJuego
             this.btnCrearPersonaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearPersonaje.Name = "btnCrearPersonaje";
             this.btnCrearPersonaje.Size = new System.Drawing.Size(218, 105);
-            this.btnCrearPersonaje.TabIndex = 6;
-            this.btnCrearPersonaje.Text = "Crear Personaje";
+            this.btnCrearPersonaje.TabIndex = 1;
+            this.btnCrearPersonaje.Text = "Comenzar Partida";
             this.btnCrearPersonaje.UseVisualStyleBackColor = true;
             this.btnCrearPersonaje.Click += new System.EventHandler(this.btnCrearPersonaje_Click);
             // 

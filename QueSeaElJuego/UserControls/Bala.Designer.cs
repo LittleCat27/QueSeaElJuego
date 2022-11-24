@@ -29,43 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.timerTiempoVida = new System.Windows.Forms.Timer(this.components);
+            this.lblProyectil = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "*";
             // 
             // timerTiempoVida
             // 
             this.timerTiempoVida.Interval = 20;
             this.timerTiempoVida.Tick += new System.EventHandler(this.timerTiempoVida_Tick);
             // 
+            // lblProyectil
+            // 
+            this.lblProyectil.AutoSize = true;
+            this.lblProyectil.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProyectil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblProyectil.Location = new System.Drawing.Point(3, 0);
+            this.lblProyectil.Name = "lblProyectil";
+            this.lblProyectil.Size = new System.Drawing.Size(74, 22);
+            this.lblProyectil.TabIndex = 0;
+            this.lblProyectil.Text = ">>---->";
+            // 
             // Bala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProyectil);
             this.Name = "Bala";
-            this.Size = new System.Drawing.Size(27, 28);
+            this.Size = new System.Drawing.Size(81, 26);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerTiempoVida;
+        private System.Windows.Forms.Label lblProyectil;
     }
 }

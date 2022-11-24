@@ -116,5 +116,12 @@ namespace QueSeaElJuego.Forms
                 intentarLogin();
             }
         }
+
+        private void jugarSinDB_Click(object sender, EventArgs e)
+        {
+            PantallaPhoto pantallaPhoto = new PantallaPhoto(this.FPrincipal);
+            pantallaPhoto.Show();
+            this.Dispose();
+        }
     }
 }

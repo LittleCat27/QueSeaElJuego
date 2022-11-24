@@ -146,6 +146,12 @@
     <Compile Include="UserControls\Bala.Designer.cs">
       <DependentUpon>Bala.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Enemigo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Enemigo.Designer.cs">
+      <DependentUpon>Enemigo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FormJuego.resx">
       <DependentUpon>FormJuego.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +178,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Bala.resx">
       <DependentUpon>Bala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Enemigo.resx">
+      <DependentUpon>Enemigo.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -206,7 +215,10 @@
       <LastGenOutput>db.cs</LastGenOutput>
     </Content>
     <Content Include="Recursos\Fondos\cuerpo.png" />
+    <Content Include="Recursos\Fondos\enemigo.png" />
+    <Content Include="Recursos\Fondos\flecha.png" />
     <Content Include="Recursos\Fondos\FondoFantasia.png" />
+    <Content Include="Recursos\Fondos\fondoJuego.png" />
     <Content Include="Recursos\Fondos\maderaFondo.png" />
   </ItemGroup>
   <ItemGroup>

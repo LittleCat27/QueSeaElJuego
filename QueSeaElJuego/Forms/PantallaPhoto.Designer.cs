@@ -63,11 +63,12 @@ namespace QueSeaElJuego.Forms
             this.btn_Encender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Encender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Encender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Encender.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btn_Encender.Location = new System.Drawing.Point(375, 363);
             this.btn_Encender.Name = "btn_Encender";
             this.btn_Encender.Size = new System.Drawing.Size(148, 69);
             this.btn_Encender.TabIndex = 1;
-            this.btn_Encender.Text = "Sacar Foto";
+            this.btn_Encender.Text = "Iniciar Camara";
             this.btn_Encender.UseVisualStyleBackColor = true;
             this.btn_Encender.Click += new System.EventHandler(this.btnEncender_Click);
             // 
@@ -89,8 +90,9 @@ namespace QueSeaElJuego.Forms
             // 
             // BuscarFoto
             // 
-            this.BuscarFoto.Filter = "Todos los archivos (*.*)|*.*|Imagen jpg (*.jpg)|*.jpg|Imagen png (*.png)|*.png|Imagen jpeg (*.jpeg)|*.jpeg|Ima" +
-    "gen tiff (*.tiff)|*.tiff|Imagen de mapa de bits (*.bmp)|*.bmp";
+            this.BuscarFoto.Filter = "Todos los archivos (*.*)|*.*|Imagen jpg (*.jpg)|*.jpg|Imagen png (*.png)|*.png|Im" +
+    "agen jpeg (*.jpeg)|*.jpeg|Imagen tiff (*.tiff)|*.tiff|Imagen de mapa de bits (*." +
+    "bmp)|*.bmp";
             this.BuscarFoto.FileOk += new System.ComponentModel.CancelEventHandler(this.BuscarFoto_FileOk);
             // 
             // ConfirmarSeleccion

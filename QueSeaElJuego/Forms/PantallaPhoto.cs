@@ -44,32 +44,37 @@ namespace QueSeaElJuego.Forms
         //////////////////////////////////////////////////////////////////////////////////
 
         #region Seleccion de foto o sacar una foto
+
+        private bool foto = false;
         private void btnEncender_Click(object sender, EventArgs e)
         {
-            if(camara != null) camara.Dispose();
-            camara = new VideoCapture();
-            this.contador = 0;
-            camara.Start();
-            if (!timer1.Enabled)
+            if (!foto)
             {
-                timer1.Enabled = true;
+                btn_Encender.Text = "Sacar Foto";
+                foto = !foto;
+                if (camara != null) camara.Dispose();
+                camara = new VideoCapture();
+                this.contador = 0;
+                camara.Start();
+                if (!timer1.Enabled)
+                {
+                    timer1.Enabled = true;
+                }
+                timer1.Start();
             }
-            timer1.Start();
+            else
+            {
+                btn_Encender.Text = "Iniciar Camara";
+                timer1.Stop();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.contador++;   
+        {  
             camara.Read(frame);
             if (camara.IsOpened)
             {
                 Imagen.Image = frame.ToBitmap();
-                if (contador == 20)
-                {
-                    camara.Stop();
-                    timer1.Stop();
-                    camara.Dispose();
-                }
             }
             else
             {
@@ -174,10 +179,34 @@ namespace QueSeaElJuego.Forms
 
         private void ConfirmarSeleccion_Click(object sender, EventArgs e)
         {
+            Image imagenFinal;
+            if (Imagen.Image.Width > 220 || Imagen.Image.Height > 220)
+            {
+                Rectangle rect = new Rectangle(240, 160, Imagen.Width, Imagen.Height);
+                //First we define a rectangle with the help of already calculated points  
+                Bitmap OriginalImage = new Bitmap(Imagen.Image, Imagen.Image.Width, Imagen.Image.Height);
+                //Original image  
+                Bitmap _img = new Bitmap(Imagen.Width, Imagen.Height);
+                // for cropinf image  
+                Graphics g = Graphics.FromImage(_img);
+                // create graphics  
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                //set image attributes  
+                g.DrawImage(OriginalImage, 0, 0, rect, GraphicsUnit.Pixel);
+                
+                imagenFinal = _img;
+            }
+            else
+            {
+                imagenFinal = Imagen.Image;
+            }
+
             FormJuego fJuego = new FormJuego(this.FPrincipal);
             
             fJuego.Show();
-            fJuego.cargarCara(this.Imagen.Image);
+            fJuego.cargarCara(imagenFinal);
             this.Dispose();
         }
 
